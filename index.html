@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phuty Phuty Drop Inn Centre – Polokwane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal:      #0D9488;
+    --teal-lt:   #CCFBF1;
+    --teal-dk:   #0F766E;
+    --blue:      #0EA5E9;
+    --blue-dk:   #0369A1;
+    --blue-deep: #0C2D4E;
+    --cyan:      #22D3EE;
+    --cyan-lt:   #ECFEFF;
+    --white:     #FFFFFF;
+    --offwhite:  #F0FAFA;
+    --muted:     #4B7280;
+    --border:    rgba(13,148,136,0.15);
+    --r:         12px;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body:    'Inter', sans-serif;
+
+    /* gradients */
+    --g-hero:    linear-gradient(135deg, #0C2D4E 0%, #0D5C6E 50%, #0D9488 100%);
+    --g-teal:    linear-gradient(135deg, #0D9488 0%, #0EA5E9 100%);
+    --g-card:    linear-gradient(135deg, #0F766E 0%, #0369A1 100%);
+    --g-light:   linear-gradient(135deg, #ECFEFF 0%, #CCFBF1 100%);
+    --g-welcome: linear-gradient(160deg, #E0F7FA 0%, #B2EBF2 40%, #CCFBF1 100%);
+    --g-vision:  linear-gradient(135deg, #0C2D4E 0%, #0F4C75 60%, #0D7A70 100%);
+    --g-btn:     linear-gradient(135deg, #0D9488, #0EA5E9);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--offwhite);
+    color: var(--blue-deep);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--blue-deep);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 62px;
+    border-bottom: 1px solid rgba(13,148,136,0.3);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    background: var(--g-teal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cyan); }
+
+  /* ── HERO ── */
+  #hero {
+    background: var(--g-hero);
+    color: #fff;
+    padding: 100px 5vw 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: 540px;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,211,238,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,148,136,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(34,211,238,0.18);
+    border: 1px solid rgba(34,211,238,0.4);
+    color: var(--cyan);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.2rem;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 1.2rem;
+  }
+  .hero-title em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--cyan), #6EE7F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    margin-bottom: 2rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--g-btn);
+    color: #fff;
+    padding: 13px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.2s, transform 0.1s;
+    box-shadow: 0 4px 20px rgba(13,148,136,0.4);
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-block;
+    color: rgba(255,255,255,0.75);
+    padding: 13px 28px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-left: 12px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  .hero-stats { display: flex; flex-direction: column; gap: 1.2rem; }
+  .stat-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(34,211,238,0.2);
+    border-radius: var(--r);
+    padding: 1.4rem 1.6rem;
+    backdrop-filter: blur(4px);
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    line-height: 1;
+    background: linear-gradient(90deg, var(--cyan), #a5f3fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* ── SECTION SHELLS ── */
+  section { padding: 90px 5vw; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--g-teal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.6rem;
+    display: inline-block;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+    color: var(--blue-deep);
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
+  }
+  .section-body {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 640px;
+    line-height: 1.8;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-visual {
+    background: var(--g-card);
+    border-radius: 20px;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-visual::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .about-visual::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(34,211,238,0.12);
+  }
+  .about-emblem {
+    font-family: var(--font-display);
+    font-size: 5.5rem;
+    color: rgba(255,255,255,0.15);
+    user-select: none;
+    position: relative; z-index: 1;
+  }
+  .about-badge {
+    position: absolute;
+    bottom: 1.4rem; left: 1.4rem;
+    background: rgba(12,45,78,0.85);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(34,211,238,0.25);
+    z-index: 2;
+  }
+  .about-badge strong { color: var(--cyan); display: block; font-size: 1rem; }
+  .npo-tag {
+    display: inline-block;
+    background: var(--teal-lt);
+    color: var(--teal-dk);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-top: 1rem;
+    border: 1px solid rgba(13,148,136,0.2);
+  }
+
+  /* ── WELCOME ── */
+  #welcome {
+    background: var(--g-welcome);
+    text-align: center;
+  }
+  #welcome .section-title { margin: 0 auto 1.5rem; }
+  .welcome-quote {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    color: var(--teal-dk);
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .welcome-body {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  /* ── VISION & MISSION ── */
+  #vision {
+    background: var(--g-vision);
+    color: #fff;
+  }
+  #vision .section-title { color: #fff; }
+  #vision .section-label {
+    background: linear-gradient(90deg, var(--cyan), #a5f3fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .vm-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(34,211,238,0.2);
+    border-radius: var(--r);
+    padding: 2rem;
+    backdrop-filter: blur(6px);
+    position: relative;
+    overflow: hidden;
+  }
+  .vm-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(34,211,238,0.06);
+  }
+  .vm-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+  .vm-icon.v { background: rgba(34,211,238,0.15); border: 1px solid rgba(34,211,238,0.3); }
+  .vm-icon.m { background: rgba(13,148,136,0.2);  border: 1px solid rgba(13,148,136,0.35); }
+  .vm-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+  }
+  .vm-card p { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.75; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--offwhite); }
+  .services-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 3.5rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.4rem;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 1.6rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--g-teal);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    transform-origin: left;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(13,148,136,0.12);
+    border-color: rgba(13,148,136,0.3);
+  }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: var(--g-light);
+    border: 1px solid rgba(13,148,136,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .service-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin-bottom: 0.5rem;
+  }
+  .service-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--offwhite);
+    border-radius: var(--r);
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .contact-item:hover {
+    border-color: rgba(13,148,136,0.35);
+    box-shadow: 0 4px 16px rgba(13,148,136,0.08);
+  }
+  .ci-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    background: var(--g-teal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .ci-label { font-size: 0.72rem; color: var(--muted); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .ci-value { font-size: 1rem; font-weight: 600; color: var(--blue-deep); margin-top: 2px; }
+
+  .contact-cta {
+    background: var(--g-card);
+    border-radius: 20px;
+    padding: 2.8rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-cta::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(34,211,238,0.1);
+  }
+  .contact-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    position: relative;
+  }
+  .contact-cta p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 1.8rem; position: relative; }
+  .btn-white {
+    display: inline-block;
+    background: #fff;
+    color: var(--teal-dk);
+    padding: 13px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--blue-deep);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2.4rem 5vw;
+    font-size: 0.82rem;
+    border-top: 1px solid rgba(13,148,136,0.25);
+  }
+  footer span {
+    background: var(--g-teal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+  }
+
+  /* ── DIVIDER ── */
+  .divider { border: none; border-top: 1px solid rgba(13,148,136,0.12); margin: 0; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #hero, #about, .vm-grid, .services-intro, #contact {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    #hero { padding: 60px 5vw; min-height: auto; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .hero-stats { order: -1; }
+    #welcome, #vision, section { padding: 60px 5vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Phuty Phuty</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div style="position:relative;z-index:1;">
+    <span class="hero-eyebrow">Polokwane · Extension 40</span>
+    <h1 class="hero-title">
+      Caring for <em>children,</em><br>building futures
+    </h1>
+    <p class="hero-sub">
+      Phuty Phuty Drop Inn Centre provides a safe, nurturing home for nearly 200 children aged 3–17 in Polokwane — offering food, education, and hope.
+    </p>
+    <a href="#contact" class="btn-primary">Get Involved</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
+  </div>
+  <div class="hero-stats" style="position:relative;z-index:1;">
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-num">200</div>
+        <div class="stat-label">Children served daily</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3–17</div>
+        <div class="stat-label">Age range</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">NPO</div>
+      <div class="stat-label">Registered · No. 316-268 · Serving the Polokwane community</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual">
+    <div class="about-emblem">PP</div>
+    <div class="about-badge">
+      <strong>Est. Polokwane</strong>
+      127 Extension 40, 0700
+    </div>
+  </div>
+  <div>
+    <p class="section-label">About Us</p>
+    <h2 class="section-title">Who we are</h2>
+    <p class="section-body">
+      Phuty Phuty Drop Inn Centre NPC is a registered non-profit organisation based in Extension 40, Polokwane. We care for nearly 200 children between the ages of 3 and 17, providing them with nutritious food, clothing, cleaning materials, and educational support.
+    </p>
+    <p class="section-body" style="margin-top:1rem;">
+      Our doors are open to every child in need — whether they need homework help, a hot meal, or simply a place where they belong.
+    </p>
+    <span class="npo-tag">NPO Registration · 316-268</span>
+  </div>
+</section>
+
+<!-- WELCOME -->
+<section id="welcome">
+  <p class="section-label" style="display:block;text-align:center;">Welcome</p>
+  <h2 class="section-title" style="max-width:600px;margin:0 auto 1.5rem;">
+    A space of dignity,<br>respect and hope
+  </h2>
+  <p class="welcome-quote">
+    "We believe in fostering dignity, respect, and hope for every person who walks through our doors."
+  </p>
+  <p class="welcome-body">
+    Whether you are seeking assistance, looking to volunteer, or wanting to support our cause — you are welcome here. Together, we can build a stronger, more compassionate community and raise the next generation of leaders.
+  </p>
+</section>
+
+<!-- VISION & MISSION -->
+<section id="vision">
+  <p class="section-label">Our Purpose</p>
+  <h2 class="section-title">Vision & Mission</h2>
+  <div class="vm-grid">
+    <div class="vm-card">
+      <div class="vm-icon v">🌱</div>
+      <h3>Our Vision</h3>
+      <p>To build a healthy, educated community in Polokwane — empowered, well-nourished, and equipped to produce the leaders of tomorrow through mentorship, education, and access to nutritious food and safe shelter.</p>
+    </div>
+    <div class="vm-card">
+      <div class="vm-icon m">🤝</div>
+      <h3>Our Mission</h3>
+      <p>To empower communities through essential services — including counselling, nutritional support, rehabilitation referrals, and youth development programs — ensuring every individual lives with dignity and opportunity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-intro">
+    <div>
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Our Services</h2>
+    </div>
+    <p class="section-body" style="padding-top:3.5rem;">
+      From early childhood care to life-skills training, everything we do is designed to meet children and families where they are — and help them move forward.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🍼</div>
+      <h4>Infant & Toddler Care</h4>
+      <p>Safe and nurturing environments for babies and young children — feeding, hygiene, and early learning activities included.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📚</div>
+      <h4>Preschool Education</h4>
+      <p>Structured learning focused on language, mathematics, and social skills to prepare every child for primary school.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🖊️</div>
+      <h4>Aftercare & Homework Support</h4>
+      <p>Homework assistance, guided study sessions, and recreational activities for school-age children after hours.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🥗</div>
+      <h4>Meals & Nutrition</h4>
+      <p>Healthy, balanced meals and snacks every day — because no child can learn or grow on an empty stomach.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <h4>Psychosocial Support</h4>
+      <p>Counselling and emotional support services to help children and families cope with trauma, stress, and life challenges.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧠</div>
+      <h4>Life Skills Development</h4>
+      <p>Activities that teach essential life skills — financial literacy, communication, problem-solving, and more.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧺</div>
+      <h4>Basic Needs Support</h4>
+      <p>Provision of food, clothing, hygiene assistance, and laundry facilities so every child's basic needs are met.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌍</div>
+      <h4>Community Engagement</h4>
+      <p>Outreach programs that involve community members in planning and decision-making — building belonging and collaboration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <p class="section-label">Reach Us</p>
+    <h2 class="section-title">Get in touch</h2>
+    <p class="section-body">We welcome volunteers, donors, partner organisations, and anyone seeking support. Reach out — we'd love to hear from you.</p>
+    <div class="contact-info" style="margin-top:2rem;">
+      <div class="contact-item">
+        <div class="ci-icon">📞</div>
+        <div>
+          <div class="ci-label">Phone</div>
+          <div class="ci-value">071 527 1375</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📍</div>
+        <div>
+          <div class="ci-label">Address</div>
+          <div class="ci-value">127 Extension 40, Polokwane, 0700</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">🏛️</div>
+        <div>
+          <div class="ci-label">NPO Registration</div>
+          <div class="ci-value">316-268</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-cta">
+    <h3>Make a difference today</h3>
+    <p>Every rand donated, every hour volunteered, and every meal provided changes a child's life. Join our community of care.</p>
+    <a href="tel:0715271375" class="btn-white">Call Us Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 <span>Phuty Phuty Drop Inn Centre</span> NPC · NPO No. 316-268 · 127 Extension 40, Polokwane, 0700</p>
+</footer>
+
+</body>
+</html>
