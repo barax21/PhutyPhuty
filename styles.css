@@ -218,6 +218,8 @@
     font-weight:600; font-size:0.88rem; cursor:pointer; border:none; font-family:var(--font-body);
     box-shadow:0 4px 16px rgba(13,148,136,0.3); transition:opacity 0.2s;
   }
+
+
   .btn-teal:hover { opacity:0.85; }
   .btn-outline {
     display:inline-block; background:transparent;
@@ -282,7 +284,13 @@
 
   /* SERVICES */
   #services { background:var(--offwhite); }
-  .services-intro { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-bottom:3rem; }
+  .services-intro { /* display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4rem; 
+    align-items:start;
+    margin-bottom:3rem; */ 
+    margin-bottom:3rem;
+}
   .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.3rem; }
   .service-card {
     background:var(--white); border:1px solid var(--border);
