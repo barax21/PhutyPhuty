@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+  <a href="index.html" class="nav-logo" onclick="showPage('home');return false;">Phuty Phuty</a>
+  <ul class="nav-links">
+ <li><a href="index.html" id="nav-gallery-btn" onclick="showPage(')">HOME</a></li>
+    <li><a href="#services" onclick="showPage('home');setTimeout(()=>document.getElementById('services').scrollIntoView({behavior:'smooth'}),50);return false;">Services</a></li>
+    <li><button class="" id="nav-gallery-btn" onclick="showPage('gallery')">Gallery</button></li>
+    <li><a href="#contact" onclick="showPage('home');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),50);return false;">Contact</a></li>
+  </ul>
+</nav>
+
+    <!-- ══════════════ GALLERY PAGE ══════════════ -->
+<div id="gallery-page" class="page">
+
+  <div class="gallery-hero">
+    <div class="gallery-hero-inner">
+      <span class="hero-eyebrow">Our Gallery</span>
+      <h1>Moments from Phuty Phuty</h1>
+      <p>Photos and videos from our events, educational activities, community support programmes, and special moments.</p>
+    </div>
+  </div>
+
+
+
+  <section class="gallery-grid-section">
+    <h2>Gallery Collection</h2>
+
+    <div class="gallery-main-grid" id="gallery-grid">
+
+      <!-- IMAGE 1 -->
+      <div class="gallery-item" data-cat="photos events" onclick="openLightbox('media/aa.jpg')">
+        <img src="media/aa.jpg" alt="">
+        
+      </div>
+
+      <!-- IMAGE 2 -->
+      <div class="gallery-item" data-cat="photos education">
+        <img src="media/cc.jpg" alt="">
+      </div>
+
+      <!-- IMAGE 3 -->
+      <div class="gallery-item" data-cat="photos events">
+        <img src="media/dd.jpg" alt="">
+      </div>
+
+        <!-- IMAGE 3 -->
+      <div class="gallery-item" data-cat="photos events">
+        <img src="media/bb.jpg" alt="">
+      </div>
+
+
+        <!-- IMAGE 3 -->
+      <div class="gallery-item" data-cat="photos events">
+        <img src="media/ee.jpg" alt="">
+      </div>
+
+
+        <!-- IMAGE 3 -->
+      <div class="gallery-item" data-cat="photos events">
+        <img src="media/gg.jpg" alt="">
+      </div>
+
+
+
+
+
+      
+      <!-- VIDEO 2 -->
+      <div class="gallery-item" data-cat="videos education">
+        <video controls preload="metadata" autoplay muted loop playsinline>
+          <source src="media/v11.mp4" type="video/mp4">
+        </video>
+      </div>
+
+
+    <!-- VIDEO 3 -->
+      <div class="gallery-item" data-cat="videos">
+        <video controls preload="metadata" autoplay muted loop playsinline>
+        <source src="media/v2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+
+      <!-- VIDEO 1 -->
+      <div class="gallery-item" data-cat="videos events">
+        <video controls preload="metadata" autoplay muted loop playsinline>
+        <source src="media/v1.mp4" type="video/mp4">
+        </video>
+      </div>
+
+
+      <!-- VIDEO 3 -->
+      <div class="gallery-item" data-cat="videos">
+        <video controls preload="metadata" autoplay muted loop playsinline>
+        <source src="media/v3.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      
+      <!-- VIDEO 3 -->
+      <div class="gallery-item" data-cat="videos">
+        <video controls preload="metadata" autoplay muted loop playsinline>
+        <source src="media/v5.mp4" type="video/mp4">
+        </video>
+      </div>
+
+        <!-- VIDEO 3 -->
+      <div class="gallery-item" data-cat="videos">
+        <video controls preload="metadata" autoplay muted loop playsinline>
+        <source src="media/v7.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    <!-- VIDEO 3 -->
+      <div class="gallery-item" data-cat="videos">
+        <video controls preload="metadata" autoplay muted loop playsinline>
+        <source src="media/v6.mp4" type="video/mp4">
+        </video>
+      </div>
+
+        <div class="gallery-item" data-cat="photos events">
+        <img src="media/jj.jpg" alt="" height="100%" >
+      </div>
+
+
+        <div class="gallery-item" data-cat="photos events">
+        <img src="media/kk.jpg" alt="" height="100%">
+      </div>
+
+
+
+      
+
+    </div>
+  </section>
+
+</div>
+
+
+    
+</body>
+</html>

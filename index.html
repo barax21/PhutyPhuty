@@ -12,11 +12,11 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo" onclick="showPage('home');return false;">Phuty Phuty</a>
+  <a href="index.html" class="nav-logo" onclick="showPage('home');return false;">Phuty Phuty</a>
   <ul class="nav-links">
     <li><a href="#about" onclick="showPage('home');setTimeout(()=>document.getElementById('about').scrollIntoView({behavior:'smooth'}),50);return false;">About</a></li>
     <li><a href="#services" onclick="showPage('home');setTimeout(()=>document.getElementById('services').scrollIntoView({behavior:'smooth'}),50);return false;">Services</a></li>
-    <li><button class="" id="nav-gallery-btn" onclick="showPage('gallery')">Gallery</button></li>
+    <li><a href="gallery.html" id="nav-gallery-btn" onclick="showPage(')">Gallery</a></li>
     <li><a href="#contact" onclick="showPage('home');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),50);return false;">Contact</a></li>
   </ul>
 </nav>
@@ -58,7 +58,7 @@
         <h2 class="section-title" style="margin-bottom:0.3rem;">Moments from the centre</h2>
         <p style="color:var(--muted);font-size:0.95rem;">A glimpse into daily life, events &amp; milestones at Phuty Phuty.</p>
       </div>
-      <button class="btn-teal" onclick="showPage('gallery')">View Full Gallery →</button>
+      <button class="btn-teal" onclick="window.location.href='gallery.html'">View Full Gallery →</button>
     </div>
     <div class="gallery-cards">
       <!-- Card 1: real photo -->

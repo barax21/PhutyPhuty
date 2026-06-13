@@ -400,6 +400,40 @@
   footer span { background:var(--g-teal); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:600; }
   .divider { border:none; border-top:1px solid rgba(13,148,136,0.12); margin:0; }
 
+
+
+/* GALLERY PAGE */
+
+
+#gallery-page { 
+  display:block; 
+}
+
+
+.gallery-item video{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    border-radius:14px;
+}
+
+.gallery-main-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:1.5rem;
+}
+
+.gallery-item{
+    background:#fff;
+    overflow:hidden;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+
+
+
   /* RESPONSIVE */
   @media (max-width:768px) {
     #hero, #about, .vm-grid, .services-intro, #contact { grid-template-columns:1fr; gap:2.5rem; }
