@@ -393,4 +393,7 @@
     .gallery-main-grid { grid-template-columns:1fr; }
     .gallery-item.featured { grid-column:span 1; }
     .stat-row { grid-template-columns:1fr 1fr; }
+    .nav-links li a, .nav-links li button {
+    font-size: 0.55rem;
+}
   }
