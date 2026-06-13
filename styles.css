@@ -1,4 +1,8 @@
-<style>
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --teal:      #0D9488;
@@ -374,4 +378,3 @@
     .gallery-item.featured { grid-column:span 1; }
     .stat-row { grid-template-columns:1fr 1fr; }
   }
-</style>
